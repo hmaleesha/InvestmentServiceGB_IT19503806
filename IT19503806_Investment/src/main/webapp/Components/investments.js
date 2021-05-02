@@ -163,10 +163,10 @@ if ($("#projId").val().trim() == "")
  }
  
  // dates validation
- var cDate = document.forms['formInvestment'].conDate.value;
+ var cDate = $("#conDate").val();
  cDate = new Date(cDate).getTime();
  
- var inDate = document.forms['formInvestment'].invDate.value;
+ var inDate = $("#invDate").val();
  inDate = new Date(inDate).getTime();
  
  if(inDate<cDate){
