@@ -77,10 +77,10 @@ public class InvestmentAPI extends HttpServlet {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request); 
 		String output = investObj.updateInvestment(paras.get("hidInvestIDSave").toString(), 
-				request.getParameter("amountFund"), 
-				request.getParameter("equity"), 
-				request.getParameter("conDate"), 
-				request.getParameter("invDate")); 
+				paras.get("amountFund").toString(), 
+				paras.get("equity").toString(), 
+				paras.get("conDate").toString(), 
+				paras.get("invDate").toString()); 
 		response.getWriter().write(output);
 	}
 

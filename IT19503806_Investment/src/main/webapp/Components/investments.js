@@ -40,7 +40,7 @@ $.ajax(
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
-$("#hidInvestIDSave").val($(this).data("investid")); 
+ $("#hidInvestIDSave").val($(this).data("investid")); 
  $("#amountFund").val($(this).closest("tr").find('td:eq(1)').text()); 
  $("#equity").val($(this).closest("tr").find('td:eq(2)').text()); 
  $("#conDate").val($(this).closest("tr").find('td:eq(3)').text()); 
