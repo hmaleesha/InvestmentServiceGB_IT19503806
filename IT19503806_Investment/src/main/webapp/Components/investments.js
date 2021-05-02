@@ -36,7 +36,7 @@ $.ajax(
  onInvestmentaveComplete(response.responseText, status); 
  } 
  }); 
-}); 
+});
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
@@ -48,7 +48,7 @@ $("#hidInvestIDSave").val($(this).data("investid"));
  $("#projId").val($(this).closest("tr").find('td:eq(5)').text()); 
 }); 
 
-function  onInvestmentaveComplete(response, status)
+function onInvestmentaveComplete(response, status)
 { 
 if (status == "success") 
  { 
@@ -135,6 +135,9 @@ if ($("#conDate").val().trim() == "")
  { 
  return "Insert Confirmation Date."; 
  } 
+ 
+ 
+
 // is numerical value
 var tmpFund = $("#amountFund").val().trim();
 var tmpEquity = $("#equity").val().trim(); 
@@ -157,6 +160,17 @@ if ($("#projId").val().trim() == "")
  if (!$.isNumeric(tmpProj)) 
  { 
  return "Insert a numerical value for project Id."; 
+ }
+ 
+ // dates validation
+ var cDate = document.forms['formInvestment'].conDate.value;
+ cDate = new Date(cDate).getTime();
+ 
+ var inDate = document.forms['formInvestment'].invDate.value;
+ inDate = new Date(inDate).getTime();
+ 
+ if(inDate<cDate){
+  return "Invalid dates. Investment must be confirmed before funding";
  }
 return true; 
 }

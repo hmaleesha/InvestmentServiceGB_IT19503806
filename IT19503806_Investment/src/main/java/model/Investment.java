@@ -46,8 +46,8 @@ public Connection connect() {
 		Date conDate=Date.valueOf(confirmedDate);
 		Date invDate=Date.valueOf(investDate);
 		
-		if(conDate.compareTo(invDate)>0)
-			return "Invalid confirmation date. Investment must be confirmed";
+	//	if(conDate.compareTo(invDate)>0)
+		//	return "Invalid confirmation date. Investment must be confirmed";
 		
 		String query = "insert into investment(investId,amountFunded,equityAssigned,confirmedDate,investmentDate,projId)"+" values(?,?,?,?,?,?)";
 		
